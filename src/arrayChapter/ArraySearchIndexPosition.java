@@ -2,6 +2,7 @@ package arrayChapter;
 
 /*
  * created by Hannah Li on 18/11/7
+ * search index
  */
 public class ArraySearchIndexPosition {
 
