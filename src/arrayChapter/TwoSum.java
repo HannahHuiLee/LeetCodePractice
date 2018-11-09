@@ -3,7 +3,7 @@ package arrayChapter;
 /**
  * Created by huilee on 2018/3/28.
  */
-public class ArrayTwoSum {
+public class TwoSum {
 
 
     public static void main(String[] args) {

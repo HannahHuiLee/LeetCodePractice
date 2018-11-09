@@ -1,10 +1,10 @@
 package arrayChapter;
 
-/*
+/**
  * created by Hannah Li on 18/11/7
  * search index
  */
-public class ArraySearchIndexPosition {
+public class SearchIndexPosition {
 
     static int[] nums = {1,2,5,8};
     static int target = 3;

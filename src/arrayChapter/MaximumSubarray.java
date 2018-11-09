@@ -1,10 +1,10 @@
 package arrayChapter;
 
-/*
+/**
  * created by Hannah Li on 18/11/8
  * maximum subarray: 在一个数组中，找到连续的子数组，和为最大值.
  */
-public class ArrayMaximumSubarray {
+public class MaximumSubarray {
     // num[i] = num[i-1]>0? num[i]+num[i-1] : num[i]
     //            -2, 1, -2, 4,  3, 5, 6,  1, 5
    static int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
