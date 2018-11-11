@@ -1,7 +1,6 @@
 package arrayChapter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,9 +30,7 @@ public class PascalTriangle {
                 list.set(j, list.get(j) + list.get(j + 1));
                 System.out.println(list.toString());
             }
-
         }
-
         return result;
     }
 
