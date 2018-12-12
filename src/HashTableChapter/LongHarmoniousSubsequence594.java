@@ -24,6 +24,7 @@ public class LongHarmoniousSubsequence594 {
      * Explanation: The longest harmonious subsequence is [3,2,2,2,3].
      * 题目大意：找一个最长子序列，要求子序列中最大值和最小值的差是1。
      * 思路：用一个map存放所有值出现的次数，对于map中的每个num，求出num和num+1出现的次数之和，找出最大值即可
+     * 42ms
      */
     public static int findLHS(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
