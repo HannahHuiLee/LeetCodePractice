@@ -12,6 +12,7 @@ public class ReverseLinkedList206 {
      *Reverse a singly linked list.
      *Input: 1->2->3->4->5->NULL
      * Output: 5->4->3->2->1->NULL
+     * 用一个新的值分别储存其中要使用的值
      */
     public ListNode reverseList(ListNode head) {
         if(head == null || head.next == null) return head;
