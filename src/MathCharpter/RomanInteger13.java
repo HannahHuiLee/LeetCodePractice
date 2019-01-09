@@ -7,6 +7,11 @@ package MathCharpter;
  */
 public class RomanInteger13 {
 
+    public static void main(String[] args){
+        String roman = "LVIII";
+        System.out.print(romanToInt(roman));
+    }
+
     /**
      *Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
      * Input: "LVIII" ---> 58
@@ -14,7 +19,7 @@ public class RomanInteger13 {
      *
      * 规律： 左边的数字小于右边的数字 =  右边- 左边  ：  IV ：4    ；    VI ： 6
      */
-    public int romanToInt(String s) {
+    public static int romanToInt(String s) {
         if(s == null || s.length() == 0) return 0;
         int res = toNumber(s.charAt(0));
         for(int i = 1; i < s.length(); i++){
@@ -27,7 +32,7 @@ public class RomanInteger13 {
         return res;
     }
 
-    public int toNumber(char c){
+    public static int toNumber(char c){
         int res = 0;
         switch (c){
             case 'I': return 1;
