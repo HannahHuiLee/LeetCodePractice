@@ -26,6 +26,8 @@ public class VailidAnagram242 {
      * Follow up:
      * What if the inputs contain unicode characters? How would you adapt your solution to such case?
      *
+     * 1. 排序 sort：  O(logN)
+     * 2. map 计数：{letter: count}: O(N)
      */
     public static boolean isAnagram(String s, String t) {
         if(s.length() != t.length()) return false;
