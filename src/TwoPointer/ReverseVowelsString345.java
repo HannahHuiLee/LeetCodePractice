@@ -1,5 +1,9 @@
 package TwoPointer;
 
+import java.sql.Array;
+import java.util.Arrays;
+import java.util.HashSet;
+
 /**
  * created by Hannah Li on 19/1/6
  * Project name: LeetcodeProject
@@ -7,9 +11,35 @@ package TwoPointer;
  */
 public class ReverseVowelsString345 {
 
+    private static final HashSet<Character> vowels =
+            new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
+
     public static void main(String[] args) {
-        String s = "hello";
+        String s = "leetcode";
         System.out.print(reverseVowels(s));
+    }
+
+    public static String reverseVowels(String s) {
+        if (s == null) return null;
+        int i = 0, j = s.length() - 1;
+        char[] result = new char[s.length()];
+        while (i <= j){
+            char ci = s.charAt(i);
+            char cj = s.charAt(j);
+            if(!vowels.contains(ci)){
+                result[i] = ci;
+                i++;
+            }else if(!vowels.contains(cj)){
+                result[j] = cj;
+                j--;
+            }else{
+                result[i] = cj;
+                result[j] = ci;
+                i++;
+                j--;
+            }
+        }
+        return new String(result);
     }
 
     /**
@@ -22,7 +52,7 @@ public class ReverseVowelsString345 {
      * <p>
      * 跳出条件就是start < end。
      */
-    public static String reverseVowels(String s) {
+    public static String reverseVowels2(String s) {
         if (s == null || s.length() == 0) return s;
         String vowels = "aeiouAEIOU";
 
@@ -31,10 +61,10 @@ public class ReverseVowelsString345 {
         char[] str = s.toCharArray();
 
         while (start < end) {
-            while (start< end && vowels.indexOf(str[start]) == -1){
+            while (start < end && vowels.indexOf(str[start]) == -1) {
                 start++;
             }
-            while (start<end&& vowels.indexOf(str[end]) == -1){
+            while (start < end && vowels.indexOf(str[end]) == -1) {
                 end--;
             }
             char temp = str[start];
