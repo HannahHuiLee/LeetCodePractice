@@ -1,4 +1,4 @@
-package arrayChapter;
+package ArrayChapter;
 
 /**
  * Created by huilee on 2018/3/29.

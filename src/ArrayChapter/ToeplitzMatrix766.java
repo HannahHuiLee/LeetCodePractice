@@ -1,4 +1,4 @@
-package arrayChapter;
+package ArrayChapter;
 
 /**
  * created by Hannah Li on 18/11/25

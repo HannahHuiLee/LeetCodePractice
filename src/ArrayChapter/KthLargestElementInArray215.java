@@ -1,4 +1,6 @@
-package arrayChapter;
+package ArrayChapter;
+
+import java.util.PriorityQueue;
 
 /**
  * created by Hannah Li on 2020-05-07
@@ -9,8 +11,8 @@ public class KthLargestElementInArray215 {
 
     public static void main(String[] args) {
         KthLargestElementInArray215 array215 = new KthLargestElementInArray215();
-        int[] array = new int[]{3,2,1,5,6,4};
-        System.out.println(array215.findKthLargest(array, 2));
+        int[] array = new int[]{3, 2, 1, 5, 6, 4};
+        System.out.println(array215.findKthLargest2(array, 2));
     }
 
     /**
@@ -20,7 +22,7 @@ public class KthLargestElementInArray215 {
      * Input: [3,2,1,5,6,4] and k = 2
      * Output: 5
      * <p>
-     * quick select
+     * 方法： quick select
      */
     public int findKthLargest(int[] nums, int k) {
         if (nums == null || nums.length == 0) return 0;
@@ -68,5 +70,22 @@ public class KthLargestElementInArray215 {
         nums[i] = nums[j];
         nums[j] = temp;
     }
+
+
+    /**
+     * 时间复杂度 O(NlogK)，空间复杂度 O(K)。
+     * priority queue
+     */
+    public int findKthLargest2(int[] nums, int k) {
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        for (int n : nums) {
+            priorityQueue.add(n);
+            if (priorityQueue.size() > k) { // 维护堆的大小为 K
+                priorityQueue.poll(); // 检索并移除队列的头部
+            }
+        }
+        return priorityQueue.peek();
+    }
+
 
 }

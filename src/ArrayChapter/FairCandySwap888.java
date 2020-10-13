@@ -1,4 +1,4 @@
-package arrayChapter;
+package ArrayChapter;
 
 import java.util.Arrays;
 import java.util.HashSet;

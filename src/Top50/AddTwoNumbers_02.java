@@ -1,4 +1,4 @@
-package top50;
+package Top50;
 
 import LinkedListChapter.ListNode;
 

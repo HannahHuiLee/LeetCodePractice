@@ -1,6 +1,5 @@
-package arrayChapter;
+package ArrayChapter;
 
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
