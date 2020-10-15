@@ -1,6 +1,11 @@
-package BinarySearch;/**
+package BinarySearch;
+
+/**
  * created by Hannah Li on 2020-10-14
  * Project name: LeetcodeProject
- * LeetCode NO.: 
- */public class SingleElementSortedArray540 {
+ * LeetCode NO.: 540
+ */
+public class SingleElementSortedArray540 {
+
+
 }
