@@ -22,7 +22,7 @@ public class SingleElementSortedArray540 {
         int l= 0, h = nums.length - 1;
         while (l < h){
             int mid = l + (h - l)/2;
-            if(mid % 2 == 1) mid--;
+            if(mid % 2 == 1) mid--;  // 保证 l/h/m 都在偶数位，使得查找区间大小一直都是奇数
             if(nums[mid]==nums[mid+1]){
                 l = mid +2;
             }else{
