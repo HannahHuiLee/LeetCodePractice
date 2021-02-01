@@ -18,6 +18,7 @@ public class RomanInteger13 {
      *      Explanation: L = 50, V= 5, III = 3.
      *
      * 规律： 左边的数字小于右边的数字 =  右边- 左边  ：  IV ：4    ；    VI ： 6
+     * todo 为啥 2*
      */
     public static int romanToInt(String s) {
         if(s == null || s.length() == 0) return 0;

@@ -17,7 +17,7 @@ public class ValidParentheses20 {
     /**
      *Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
      * Input: "()[]{}"  --->   true
-     *
+     * 关键理解 else语句中的 stack.pop() != ch
      */
     public static boolean isValid(String s) {
         if(s == null || s.length() == 0) return true;

@@ -11,9 +11,26 @@ import java.util.Arrays;
 public class MergeSortedArray88 {
 
     public static void main(String[] args) {
-        int[] num1 = new int[]{1,2,3,0,0,0};
-        int[] num2 = new int[]{2,5,6};
-        merge(num1, 3, num2, 3);
+        int[] num1 = new int[]{1, 2, 6, 0, 0, 0};
+        int[] num2 = new int[]{2, 3, 5};
+//        merge(num1, 3, num2, 3);
+        merge2(num1, 3, num2, 3);
+    }
+
+    private static void merge2(int[] num1, int m, int[] num2, int n) {
+        int end = m + n - 1;
+        while (m - 1 >= 0 && n - 1 >= 0) {
+            int x = m - 1 > 0 ? num1[m - 1] : Integer.MIN_VALUE;
+            int y = n - 1 > 0 ? num2[n - 1] : Integer.MIN_VALUE;
+
+            if(x > y){
+                num1[end--] = x;
+                m--;
+            }else {
+                num1[end--] = y;
+                n--;
+            }
+        }
     }
 
     /**

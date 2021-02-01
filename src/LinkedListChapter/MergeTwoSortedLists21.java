@@ -51,10 +51,6 @@ public class MergeTwoSortedLists21 {
     }
 
 
-
-
-
-
     public static class ListNode {
         int val;
         ListNode next;

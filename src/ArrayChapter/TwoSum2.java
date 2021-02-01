@@ -12,7 +12,19 @@ public class TwoSum2 {
     public static void main(String[] args) {
 
         int[] prices = {2, 7, 11, 15};
-        System.out.print(Arrays.toString(twoSum(prices, 9)));
+//        System.out.print(Arrays.toString(twoSum(prices, 9)));
+        System.out.print(Arrays.toString(twoSum0(prices, 9)));
+    }
+
+    private static int[] twoSum0(int[] numbers, int target) {
+        for (int i = 0; i< numbers.length; i++){
+            for (int j = i+1; j < numbers.length; j++){
+                if(numbers[i] + numbers[j] == target){
+                    return new int[]{i+1, j+1};
+                }
+            }
+        }
+        return null;
     }
 
 
