@@ -6,8 +6,6 @@ package LinkedListChapter;
  * LeetCode NO.: 206
  */
 public class ReverseLinkedList206 {
-
-
     /**
      *Reverse a singly linked list.
      *Input: 1->2->3->4->5->NULL
@@ -40,6 +38,18 @@ public class ReverseLinkedList206 {
             head.next = prev;
             prev = head;
             head = temp;
+        }
+        return prev;
+    }
+
+    public ListNode reverseList3(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null){
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
         return prev;
     }

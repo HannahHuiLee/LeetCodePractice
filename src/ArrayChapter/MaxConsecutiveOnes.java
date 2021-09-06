@@ -7,12 +7,9 @@ package ArrayChapter;
  */
 public class MaxConsecutiveOnes {
     public static void main(String[] args) {
-
         int[] nums = {1,1,0,1,1,1};
-
-        System.out.println(findMaxConsecutiveOnes(nums));
+        System.out.println(findMaxConsecutiveOnes2(nums));
     }
-
 
     /**
      * Given a binary array, find the maximum number of consecutive 1s in this array.
@@ -24,7 +21,7 @@ public class MaxConsecutiveOnes {
      *              The maximum number of consecutive 1s is 3.
      */
     public static int findMaxConsecutiveOnes(int[] nums) {
-        if(nums == null && nums.length<=0) return 0;
+        if(nums == null || nums.length<=0) return 0;
 
         int localMax = 0 ;
         int globalMax = 0;
@@ -39,5 +36,18 @@ public class MaxConsecutiveOnes {
         return globalMax;
     }
 
+    public static int findMaxConsecutiveOnes2(int[] nums) {
+        if(nums == null || nums.length == 0) return 0;
+        int count = 0, result = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1){
+                count++;
+            }else{
+                result = Math.max(result, count);
+                count= 0;
+            }
+        }
+        return Math.max(result, count);
+    }
 
 }

@@ -7,26 +7,42 @@ package LinkedListChapter;
  */
 public class RemoveLinkedListElements203 {
 
+    public static void main(String[] args) {
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(3);
+        ListNode node3 = new ListNode(5);
+        ListNode node4 = new ListNode(7);
+        ListNode node5 = new ListNode(5);
+
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+
+//        System.out.println(removeElements(node1, 5).val);
+
+    }
 
     /**
-     *Remove all elements from a linked list of integers that have value val.
+     * Remove all elements from a linked list of integers that have value val.
      * Input:  1->2->6->3->4->5->6, val = 6
      * Output: 1->2->3->4->5
      */
-    public ListNode removeElements(ListNode head, int val) {
-        if(head == null) return head;
+    // time: O(n), space: O(1)
+    public static ListNode removeElements(ListNode head, int val) {
+        if (head == null) return null;
+        ListNode pre = new ListNode(0);
+        pre.next = head;
+        ListNode dummy = pre;
 
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode p = dummy;
-        while (p .next!= null){
-            if(p.next.val == val){
-                p.next = p.next.next;
-            }else {
-                p = p.next;
+        while (dummy.next != null) {
+            if (dummy.next.val == val) {
+                dummy.next = head.next.next;
+            } else {
+                dummy = dummy.next;
             }
         }
-        return dummy.next;
+        return pre.next;
     }
 
 }

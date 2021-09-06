@@ -1,4 +1,4 @@
-package BFS;
+package BFSDFS;
 
 /**
  * created by Hannah Li on 2020-10-18
