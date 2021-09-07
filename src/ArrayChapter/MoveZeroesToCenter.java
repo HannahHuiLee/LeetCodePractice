@@ -2,6 +2,7 @@ package ArrayChapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * created by Hannah on 21/9/3
@@ -11,7 +12,37 @@ public class MoveZeroesToCenter {
 
     public static void main(String[] args) {
         int[] nums = {0, 1, 3, 5, 0, 7, 8};
-        moveZeroesToCenter2(nums);
+        List<Integer> list = new ArrayList<>();
+        list.add(0);
+        list.add(1);
+        list.add(3);
+        list.add(5);
+        list.add(0);
+        list.add(7);
+        list.add(8);
+        list.add(0);
+        System.out.println(moveZeroesToCenter3(list));
+    }
+
+    public static List<Integer> moveZeroesToCenter3(List<Integer> nums) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums.get(i) != 0) {
+                list.add(nums.get(i));
+                nums.set(i, 0) ;
+            }
+        }
+        int indexInit = 0;
+        for (int i = 0; i <= list.size() / 2 -1; i++) {
+            nums.set(indexInit, list.get(i)) ;
+            indexInit++;
+        }
+        indexInit = nums.size() - 1;
+        for (int i = list.size() - 1; i > list.size() / 2 -1; i--) {
+            nums.set(indexInit, list.get(i)) ;
+            indexInit--;
+        }
+        return nums;
     }
 
     /**
