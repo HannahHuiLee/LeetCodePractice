@@ -1,5 +1,7 @@
 package LinkedListChapter;
 
+import java.util.List;
+
 /**
  * created by Hannah Li on 19/1/4
  * Project name: LeetcodeProject
@@ -52,5 +54,32 @@ public class ReverseLinkedList206 {
             curr = next;
         }
         return prev;
+    }
+
+    /**
+     *  1       2        3        4        5
+     * temp
+     * cur     temp
+     * prev    cur     temp
+     *         prev    cur     temp
+     *                 prev    cur     temp
+     *                         prev    cur     temp = null
+     *
+     * @param head
+     * @return
+     */
+    public ListNode reverseList4(ListNode head) {
+        if (head == null ||head.next == null) return head;
+
+        ListNode prev = null;
+        ListNode cur = null;
+        ListNode temp = head;
+        while (temp != null){
+            prev = cur;
+            cur = temp;
+            temp = head.next;
+            cur.next = prev; // key line
+        }
+        return cur;
     }
 }

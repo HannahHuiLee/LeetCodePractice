@@ -79,7 +79,7 @@ public class KthLargestElementInArray215 {
     public int findKthLargest2(int[] nums, int k) {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
         for (int n : nums) {
-            priorityQueue.add(n);
+            priorityQueue.offer(n);
             if (priorityQueue.size() > k) { // 维护堆的大小为 K
                 priorityQueue.poll(); // 检索并移除队列的头部
             }
