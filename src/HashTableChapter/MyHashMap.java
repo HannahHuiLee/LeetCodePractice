@@ -39,6 +39,4 @@ public class MyHashMap {
     public void remove(int key) {
         map[key] = -1;
     }
-
-
 }
